@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход на сайт</title>
+    <link rel="stylesheet" href="{% static 'css/sign_in_page_styles.css' %}">
+</head>
+<body>
+    <div class="content">
+        <p class="page_main_text">Войдите на сайт</p>
+        <form action="{% url 'login_page' %}" method="post" class="login__form">
+            {% csrf_token %}
+            <label for="field1" class="field_label">Имя пользователя</label><br>
+            <input type="text" id="field1" name="username" class="input__field">
+            <label for="field2" class="field_label">Пароль</label><br>
+            <input type="password"  id="field2" name="password" class="input__field">
+            <button type="submit" class="submit_button">Войти</button>
+        </form>
+        <a href="{% url 'registration_page' %}" class="registration_button">Зарегистрироваться</a>
+    </div>
+</body>
+</html>

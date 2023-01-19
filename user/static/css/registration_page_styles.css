@@ -1,0 +1,54 @@
+body{
+    padding: 70px 100px;
+    font_family: serif;
+    font_style: normal;
+    color: #171ee8;
+}
+
+.content{
+    width: 100%;
+    padding: 10px 15px;
+    background: #e8e1f7;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.page_main_text{
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.field_label{
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.field__input{
+    width: 50%;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.password__field{
+    width: 25%;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.submit_button{
+    margin-left: 40%;
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #6d2bfc;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    color: white;
+}

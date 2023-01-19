@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница регистрации</title>
+    <link rel="stylesheet" href="{% static 'css/registration_page_styles.css' %}">
+</head>
+<body>
+    <div class="content">
+        <p class="page_main_text">Заполните форму регистрации пожалуйста</p>
+        <form action="{% url 'registration_page' %}" method="post">
+            {% csrf_token %}
+            {% for f in form %}
+                <label id="{{ f.id_for_label }}" class="field_label">{{ f.label }}</label><br>
+                {{ f }}<br>
+            {% endfor %}
+            <button type="submit" class="submit_button">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
