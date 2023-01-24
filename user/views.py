@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -21,6 +22,7 @@ def registrate_user(request):
                                                 email=form.cleaned_data['email'],
                                                 password=form.cleaned_data['password2'])
             new_user.save()
+            messages.success(request, 'Авторизация прошла успешно.')
             return redirect('main_page')
     else:
         form = UserRegistrateForm()
@@ -34,6 +36,7 @@ def sign_in_user(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
+            messages.success(request, 'Авторизация прошла успешно.')
             return redirect('main_page')
         else:
             return redirect('login_page')
